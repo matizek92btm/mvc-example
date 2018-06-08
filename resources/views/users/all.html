@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %} Show all users {% endblock %}
+
+{% block content %}
+
+<table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Description</th>
+        <th>Photo</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for users in user %}
+      <tr>
+        <td>{{ user.first_name }}</td>
+        <td>{{ user.last_name }}</td>
+        <td>{{ user.description }}</td>
+        <td><img src="{{user.photo}}" alt="photo" class="img"/></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+{% endblock %}
