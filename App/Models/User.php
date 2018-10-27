@@ -20,6 +20,8 @@ class User extends AbstractModel
      */
     public static function all()
     {
+        $db = self::getDatabaseConnection();
+        
         $stmt = $db->prepare("SELECT * FROM users");
         $stmt->execute();
 
@@ -34,7 +36,7 @@ class User extends AbstractModel
      * @param int id
      *
      * @return object
-     */
+    */
     public static function getById(int $id)
     {
         $db = self::getDatabaseConnection();
